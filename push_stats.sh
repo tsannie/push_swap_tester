@@ -84,9 +84,9 @@ classic_test()
 		else
 			GENERATE=`ruby -e "puts ((($@ / 2) * -1)..($@ / 2)).to_a.shuffle.join(' ')"`
 		fi
-		./push_swap $GENERATE > $TMP
+		.././push_swap $GENERATE > $TMP
 		NB_LINE=$(wc -l < $TMP)
-		RESULT=$(./checker $GENERATE < $TMP)
+		RESULT=$(.././checker $GENERATE < $TMP)
 		if [[ $RESULT == "OK" ]]; then
 			if [ $MIN -eq "-1" ] || [ $NB_LINE -lt $MIN ]; then
 				MIN=$NB_LINE
